@@ -8,16 +8,38 @@
          "alignment": "left",
          "segments": [
             {
+               "type": "session",
+               "style": "powerline",
+               "leading_powerline_symbol": "",
+               "powerline_symbol": "",
+               "foreground": "#f7fcf5",
+               "background": "#238b45",
+               "template": "{{if .SSHSession}} {{ end }} {{ .UserName }}@{{ .HostName }}"
+            },
+            {
                "type": "path",
                "style": "powerline",
-               "powerline_symbo": "\uE0B0",
-               "foreground": "#ffffff",
-               "background": "#61AFEF",
+               "powerline_symbol": "",
+               "foreground": "#f7fcf5",
+               "background": "#41ab5d",
                "properties": {
                   "style": "folder"
+               }
+            },
+            {
+               "type": "git",
+               "style": "powerline",
+               "powerline_symbol": "",
+               "foreground": "#f7fcf5",
+               "background": "#74c476",
+               "template": " {{ .UpstreamIcon }}{{ .HEAD }}",
+               "properties": {
+                  "fetch_upstream_icon": true,
+                  "source": "cli"
                }
             }
          ]
       }
    ]
 }
+
