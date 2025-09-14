@@ -34,16 +34,10 @@
          "default": ""
       }
    },
-   "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-         "activated": "",
-         "deactivated": ""
-      }
-   },
    "clock": {
       // "timezone": "America/New_York",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": "{:%I:%M %p}",
       "format-alt": "{:%Y-%m-%d}"
    },
    "cpu": {
@@ -52,26 +46,5 @@
    },
    "memory": {
       "format": "{}% "
-   },
-   "network": {
-      // "interface": "wlp2*", // (Optional) To force the use of this interface
-      "format-wifi": "{essid} ({signalStrength}%) ",
-      "format-ethernet": "{ipaddr}/{cidr} ",
-      "tooltip-format": "{ifname} via {gwaddr} ",
-      "format-linked": "{ifname} (No IP) ",
-      "format-disconnected": "Disconnected ⚠",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}"
-   },
-   "custom/media": {
-      "format": "{icon} {text}",
-      "return-type": "json",
-      "max-length": 40,
-      "format-icons": {
-         "spotify": "",
-         "default": "🎜"
-      },
-      "escape": true,
-      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-      // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
    },
 }

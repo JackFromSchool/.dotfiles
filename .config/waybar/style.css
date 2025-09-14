@@ -1,0 +1,29 @@
+@import "colors.css";
+
+* {
+   background-color: @primary_container;
+   color: @on_primary_container;
+   border: none;
+   border-radius: 0;
+   font-family: Roboto, sans-serif;
+   font-size: 13px;
+   min-height: 0;
+}
+
+window#waybar {
+   background-color: @primary_container;
+   border: 1px solid @on_primary_container;
+   border-radius: 10px;
+   color: @on_primary_container;
+}
+
+.modules-right {
+   padding-right: 10px;
+}
+
+#clock,
+#pulseaudio,
+#cpu,
+#memory {
+   padding: 0 1px;
+}
