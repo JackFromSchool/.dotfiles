@@ -12,16 +12,16 @@
                "style": "powerline",
                "leading_powerline_symbol": "",
                "powerline_symbol": "",
-               "foreground": "#f7fcf5",
-               "background": "#238b45",
-               "template": "{{if .SSHSession}} {{ end }} {{ .UserName }}@{{ .HostName }}"
+               "foreground": "{{colors.on_primary.default.hex}}",
+               "background": "{{colors.primary.default.hex}}",
+               "template": " {{"{{"}}if .SSHSession{{"}}"}} {{"{{"}} end {{"}}"}} {{"{{"}} .UserName {{"}}"}}@{{"{{"}} .HostName {{"}}"}}"
             },
             {
                "type": "path",
                "style": "powerline",
                "powerline_symbol": "",
-               "foreground": "#f7fcf5",
-               "background": "#41ab5d",
+               "foreground": "{{colors.on_primary.default.hex}}",
+               "background": "{{colors.primary.default.hex | set_lightness: -7.5}}",
                "properties": {
                   "style": "folder"
                }
@@ -30,9 +30,9 @@
                "type": "git",
                "style": "powerline",
                "powerline_symbol": "",
-               "foreground": "#f7fcf5",
-               "background": "#74c476",
-               "template": " {{ .UpstreamIcon }}{{ .HEAD }}",
+               "foreground": "{{colors.on_primary.default.hex}}",
+               "background": "{{colors.primary.default.hex | set_lightness: -15.0}}",
+               "template": "{{"{{"}} .UpstreamIcon {{"}}"}}{{"{{"}} .HEAD {{"}}"}}",
                "properties": {
                   "fetch_upstream_icon": true,
                   "source": "cli"
