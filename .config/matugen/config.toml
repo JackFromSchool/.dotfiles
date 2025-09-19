@@ -3,6 +3,11 @@ command = "swww"
 arguments = ["img", "--transition-type", "center"]
 set = true
 
+[templates.wallpaper-path]
+input_path = './templates/wallpaper-path.conf'
+output_path = '~/.config/hypr/wallpaper-path.conf'
+
+
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
