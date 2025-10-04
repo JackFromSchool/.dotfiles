@@ -1,0 +1,6 @@
+[Unit]
+Description=Battery Monitor
+
+[Service]
+Type=oneshot
+ExecStart=/home/jack/.config/systemd/battery/battery.sh

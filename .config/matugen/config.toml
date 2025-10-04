@@ -21,3 +21,16 @@ post_hook = 'pkill -SIGUSR2 waybar'
 [templates.ohmyposh]
 input_path = './templates/ohmyposh.json'
 output_path = '~/.config/ohmyposh.json'
+
+[templates.dunst]
+input_path = './templates/dunst-colorsrc'
+output_path = '~/.config/dunst/dunstrc'
+post_hook = 'pkill -SIGUSR2 dunst'
+
+[templates.wezterm]
+input_path = './templates/wezterm-colors.lua'
+output_path = '~/.config/wezterm/colors.lua'
+
+[templates.zathura]
+input_path = './templates/zathurarc'
+output_path = '~/.config/zathura/zathurarc'
