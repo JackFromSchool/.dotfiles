@@ -1,6 +1,6 @@
 texas() {
-   pdf_files=(*.pdf(N))
-   if [[ ${#pdf_files[@]} -eq 0 ]]; then
+   tex_files=(*.tex(N))
+   if [[ ${#tex_files[@]} -eq 0 ]]; then
       echo "Use in a directory with a .tex file."
    else
       latexmk -pdf -pvc &

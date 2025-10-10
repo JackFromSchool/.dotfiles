@@ -10,7 +10,7 @@ read -r NOTIFICATIONSENT < $NOTIFICATIONFILE
 
 read -r BAT < /sys/class/power_supply/BAT1/capacity
 
-if ! [[ systemd-ac-power ]]; then
+if ! systemd-ac-power; then
    if [ $BAT -le 10 ] && [ $NOTIFICATIONSENT -ne 10 ]; then
       notify-send -u critical "Extremely Low Battery!" "$BAT% Remaining."
       sed -i 's/.*/10/' $NOTIFICATIONFILE

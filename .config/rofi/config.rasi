@@ -1,0 +1,51 @@
+@import "colors.rasi"
+
+configuration {
+   modes: "window,run,ssh,drun";
+   font: "mono 12";
+   location: 0;
+   yoffset: 0;
+   zoffset: 0;
+   fixed-num-lines: true;
+   show-icons: true;
+}
+
+element {
+   orientation: horizontal;
+   children: [ element-icon, element-text ];
+}
+
+* {
+   font: "Jetbrains Mono 12";
+   background-color: transparent;
+
+   margin: 0px;
+   padding: 0px;
+   spacing: 0px;
+}
+
+window {
+   width: 480;
+   border-radius: 15px;
+
+   background-color: @primary;
+   border-color: @primary-container;
+   border: 3px;
+}
+
+mainbox {
+   padding: 13px;
+}
+
+inputbar {
+   background-color: @primary;
+   children: [prompt, entry];
+}
+
+entry {
+   placeholder: "Search";
+}
+
+listview {
+   background-color: transparent;
+}

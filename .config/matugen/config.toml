@@ -34,3 +34,11 @@ output_path = '~/.config/wezterm/colors.lua'
 [templates.zathura]
 input_path = './templates/zathurarc'
 output_path = '~/.config/zathura/zathurarc'
+
+[templates.rofi]
+input_path = './templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.vesktop]
+input_path = './templates/midnight-discord.css'
+output_path = '~/.config/vesktop/themes/midnight-discord.css'
