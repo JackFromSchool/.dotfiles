@@ -17,7 +17,6 @@ element {
 
 * {
    font: "Jetbrains Mono 12";
-   background-color: transparent;
 
    margin: 0px;
    padding: 0px;
@@ -28,7 +27,7 @@ window {
    width: 480;
    border-radius: 15px;
 
-   background-color: @primary;
+   background-color: @primary-transparent;
    border-color: @primary-container;
    border: 3px;
 }
