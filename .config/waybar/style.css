@@ -1,29 +1,46 @@
 @import "colors.css";
 
 * {
-   background-color: @primary_container;
    color: @on_primary_container;
-   border: none;
-   border-radius: 0;
-   font-family: Roboto, sans-serif;
-   font-size: 13px;
+   font-family: "Jetbrains Mono", monospace;
+   font-weight: 500;
+   font-size: 12px;
    min-height: 0;
+   letter-spacing: -0.5px;
+   margin: 1px;
+   opacity: 1;
 }
 
 window#waybar {
-   background-color: @primary_container;
-   border: 1px solid @on_primary_container;
-   border-radius: 10px;
+   background-color: rgba(0, 0, 0, 0);
+   /* border: 2px solid @on_primary_container; */
+   border-radius: 15px;
    color: @on_primary_container;
 }
 
+window#waybar.hidden {
+   opacity: 0.2;
+}
+
 .modules-right {
-   padding-right: 10px;
+   padding-right: 15px;
+}
+
+.modules-left {
+   padding-left: 10px;
 }
 
 #clock,
 #pulseaudio,
-#cpu,
-#memory {
-   padding: 0 1px;
+#battery {
+   padding-left: 10px;
 }
+
+#mpris,
+#custom-plant,
+#workspaces button {
+   padding-right: 10px;
+   padding-left: 0;
+}
+
+
