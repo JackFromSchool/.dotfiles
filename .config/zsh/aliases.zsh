@@ -14,4 +14,5 @@ alias pdf='nohup zathura $(rg --files -g "*.pdf" | fzf) > /dev/null 2>&1'
 
 alias wallpaper='matugen image $(ls ~/wallpapers/*.{jpg,png} | fzf)'
 
-alias rw="tmux neww"
+alias trun="tmux neww"
+alias tnew="tmux new -s"
