@@ -14,7 +14,6 @@ export SAVEHIST=10000
 export MANPAGER="nvim +Man!"
 
 # fzf
-
 export FZF_DEFAULT_OPTS="--height 60% \
    --border sharp \
    --layout reverse"

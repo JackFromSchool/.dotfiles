@@ -10,9 +10,13 @@ alias edit='nvim $(fzf)'
 
 alias esp-idf='source /opt/esp-idf/export.sh'
 
-alias pdf='nohup zathura $(rg --files -g "*.pdf" | fzf) > /dev/null 2>&1'
+alias pdf='zathura $(rg --files -g "*.pdf" | fzf) &'
 
 alias wallpaper='matugen image $(ls ~/wallpapers/*.{jpg,png} | fzf)'
 
 alias trun="tmux neww"
 alias tnew="tmux new -s"
+
+alias sp="sudo pacman"
+
+alias vivado-cmd="source /opt/Xilinx/2025.2/Vivado/settings64.sh"
