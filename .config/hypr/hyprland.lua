@@ -1,4 +1,5 @@
 require("lua.monitors")
+require("lua.env")
 require("lua.input")
 require("lua.binds")
 require("lua.windowrules")

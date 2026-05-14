@@ -11,7 +11,7 @@ hl.bind("SUPER + W", hl.dsp.exec_cmd(programs.wallpaper_picker))
 
 -- Window Management
 
-hl.bind("SUPER + C", hl.dsp.window.kill())
+hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "l" }))
