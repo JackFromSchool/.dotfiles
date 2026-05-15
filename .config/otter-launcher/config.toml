@@ -1,0 +1,19 @@
+[general]
+default_module = "gg"
+empty_module = "app"
+
+vi_mode = true
+exec_cmd = "zsh -c"
+
+esc_to_abort = true
+cheatsheet_entry = "?"
+
+[[modules]]
+description = "run programs"
+prefix = "app"
+cmd = "fsel"
+
+[[modules]]
+description = "calculator"
+prefix = "="
+cmd = "qalc"

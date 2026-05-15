@@ -1,59 +1,61 @@
 local programs = require("lua.programs")
 
+local main_mod = "SUPER"
+
 -- Programs
 
-hl.bind("SUPER + Q", hl.dsp.exec_cmd(programs.terminal))
-hl.bind("SUPER + I", hl.dsp.exec_cmd(programs.browser))
-hl.bind("SUPER + O", hl.dsp.exec_cmd("obsidian"))
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd(programs.launcher))
-hl.bind("SUPER + S", hl.dsp.exec_cmd(programs.screen_shot))
-hl.bind("SUPER + W", hl.dsp.exec_cmd(programs.wallpaper_picker))
+hl.bind(main_mod .. " + Q", hl.dsp.exec_cmd(programs.terminal))
+hl.bind(main_mod .. " + I", hl.dsp.exec_cmd(programs.browser))
+hl.bind(main_mod .. " + O", hl.dsp.exec_cmd("obsidian"))
+hl.bind(main_mod .. " + S", hl.dsp.exec_cmd(programs.screen_shot))
+hl.bind(main_mod .. " + W", hl.dsp.exec_cmd(programs.wallpaper_picker))
+
+-- Launcher
+
+hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(
+   'wezterm start --class "launcher" otter-launcher'
+))
+
+hl.window_rule({
+   name = "launcher-float",
+   match = {
+      class = "^(launcher)$"
+   },
+   size = { 500, 600 },
+   float = true,
+   center = true,
+   pin = true,
+})
 
 -- Window Management
 
-hl.bind("SUPER + C", hl.dsp.window.close())
-hl.bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(main_mod .. " + C", hl.dsp.window.close())
+hl.bind(main_mod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "r" }))
-hl.bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "d" }))
+hl.bind(main_mod .. " + SHIFT + h", hl.dsp.window.move({ direction = "l" }))
+hl.bind(main_mod .. " + SHIFT + l", hl.dsp.window.move({ direction = "r" }))
+hl.bind(main_mod .. " + SHIFT + k", hl.dsp.window.move({ direction = "u" }))
+hl.bind(main_mod .. " + SHIFT + j", hl.dsp.window.move({ direction = "d" }))
 
 -- Movement
 
-hl.bind("SUPER + h", hl.dsp.focus({ direction = "l" }))
-hl.bind("SUPER + l", hl.dsp.focus({ direction = "r" }))
-hl.bind("SUPER + k", hl.dsp.focus({ direction = "u" }))
-hl.bind("SUPER + j", hl.dsp.focus({ direction = "d" }))
+hl.bind(main_mod .. " + h", hl.dsp.focus({ direction = "l" }))
+hl.bind(main_mod .. " + l", hl.dsp.focus({ direction = "r" }))
+hl.bind(main_mod .. " + k", hl.dsp.focus({ direction = "u" }))
+hl.bind(main_mod .. " + j", hl.dsp.focus({ direction = "d" }))
 
 -- Workspaces
 
-hl.bind("SUPER + 1", hl.dsp.focus({ workspace = 1 }))
-hl.bind("SUPER + 2", hl.dsp.focus({ workspace = 2 }))
-hl.bind("SUPER + 3", hl.dsp.focus({ workspace = 3 }))
-hl.bind("SUPER + 4", hl.dsp.focus({ workspace = 4 }))
-hl.bind("SUPER + 5", hl.dsp.focus({ workspace = 5 }))
-hl.bind("SUPER + 6", hl.dsp.focus({ workspace = 6 }))
-hl.bind("SUPER + 7", hl.dsp.focus({ workspace = 7 }))
-hl.bind("SUPER + 8", hl.dsp.focus({ workspace = 8 }))
-hl.bind("SUPER + 9", hl.dsp.focus({ workspace = 9 }))
-hl.bind("SUPER + 0", hl.dsp.focus({ workspace = 0 }))
-
-hl.bind("SUPER + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
-hl.bind("SUPER + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
-hl.bind("SUPER + SHIFT + 3", hl.dsp.window.move({ workspace = 3 }))
-hl.bind("SUPER + SHIFT + 4", hl.dsp.window.move({ workspace = 4 }))
-hl.bind("SUPER + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }))
-hl.bind("SUPER + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }))
-hl.bind("SUPER + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }))
-hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
-hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
-hl.bind("SUPER + SHIFT + 0", hl.dsp.window.move({ workspace = 0 }))
+for i = 1, 10 do
+   local workspace = i % 10
+   hl.bind(main_mod .. " + " .. workspace, hl.dsp.focus({ workspace = workspace }))
+   hl.bind(main_mod .. " + SHIFT + " .. workspace, hl.dsp.window.move({ workspace = workspace }))
+end
 
 -- Drag
 
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind("SUPER + mouse:272", hl.dsp.window.resize(), { mouse = true })
+hl.bind(main_mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(main_mod .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })
 
 -- Audio Buttons
 
